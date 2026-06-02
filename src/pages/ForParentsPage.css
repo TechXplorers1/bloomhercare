@@ -1,0 +1,244 @@
+.parent-hero {
+  text-align: center;
+  padding: 5rem 0 3rem;
+  background: radial-gradient(circle at top right, var(--purple-wash) 0%, transparent 60%);
+}
+
+.parent-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--purple-deep);
+  margin-top: 1rem;
+}
+
+.parent-subtitle {
+  font-size: 1.15rem;
+  color: var(--ink-60);
+  max-width: 600px;
+  margin: 1rem auto 0;
+}
+
+.prep-checklist-sec {
+  margin: 5rem auto;
+}
+
+.checklist-layout {
+  display: grid;
+  grid-template-cols: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.parent-checklist {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.parent-checklist li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.check-bullet {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--pink-wash);
+  color: var(--pink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  border: 1px solid rgba(240, 83, 138, 0.2);
+}
+
+.parent-checklist strong {
+  color: var(--purple-deep);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.parent-checklist div {
+  color: var(--ink-60);
+  line-height: 1.5;
+}
+
+.interactive-checklist-box {
+  background: var(--white);
+  padding: 3rem 2rem;
+  border-radius: var(--r-lg);
+  box-shadow: var(--s-lg);
+  border: 1px solid rgba(75, 26, 111, 0.05);
+}
+
+.interactive-checklist-box h3 {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--purple-deep);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px dashed var(--purple-wash);
+  padding-bottom: 1rem;
+}
+
+.interactive-checklist-box ul {
+  list-style: none;
+}
+
+.interactive-checklist-box li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--purple-deep);
+}
+
+.interactive-checklist-box span {
+  color: var(--mint);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.age-guide-sec {
+  background: var(--purple-wash);
+  padding: 5rem 0;
+  margin: 5rem 0;
+}
+
+.age-tips-grid {
+  display: grid;
+  grid-template-cols: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.age-tip-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--s-sm);
+  border: 1px solid rgba(75, 26, 111, 0.03);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.age-badge {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  background: var(--purple-deep);
+  color: var(--white);
+  padding: 0.3rem 1rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.age-tip-card h3 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: var(--purple-deep);
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.age-tip-desc {
+  font-size: 0.95rem;
+  color: var(--ink-60);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.starters-box {
+  background: var(--purple-ghost);
+  padding: 1.25rem;
+  border-radius: var(--r-sm);
+  border-left: 3px solid var(--pink);
+}
+
+.starters-box h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--purple-soft);
+  margin-bottom: 0.5rem;
+}
+
+.starter-quote {
+  font-size: 0.9rem;
+  color: var(--purple-deep);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.starter-quote:last-child {
+  margin-bottom: 0;
+}
+
+.downloads-sec {
+  margin: 5rem auto;
+}
+
+.downloads-grid {
+  display: grid;
+  grid-template-cols: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.download-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--s-sm);
+  border: 1px solid rgba(75, 26, 111, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.dl-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.download-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--purple-deep);
+  margin-bottom: 0.5rem;
+}
+
+.download-card p {
+  font-size: 0.9rem;
+  color: var(--ink-60);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.dl-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(75, 26, 111, 0.05);
+  padding-top: 1rem;
+}
+
+.dl-format {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-30);
+}
+
+@media (max-width: 992px) {
+  .checklist-layout {
+    grid-template-cols: 1fr;
+    gap: 3rem;
+  }
+}

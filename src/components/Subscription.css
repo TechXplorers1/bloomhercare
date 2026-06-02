@@ -1,0 +1,64 @@
+.plans-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3rem 2rem 2rem;
+  border: 2px solid transparent;
+}
+
+.plan-card.recommended {
+  border-color: var(--primary-purple);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+}
+
+.recommended-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--primary-purple);
+  color: var(--white);
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  margin: 1rem 0 2rem;
+}
+
+.plan-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+}
+
+.plan-features li svg {
+  color: var(--mint-accent);
+}
+
+@media (max-width: 768px) {
+  .benefits-row { flex-direction: column; align-items: center; }
+  .plan-card.recommended { transform: none; }
+}

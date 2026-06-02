@@ -1,0 +1,373 @@
+.first-period-guide-page {
+  padding-bottom: 5rem;
+}
+
+/* Hero Section */
+.guide-hero {
+  background: radial-gradient(circle at bottom right, var(--pink-wash) 0%, transparent 60%);
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.guide-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.guide-hero-copy {
+  max-width: 500px;
+}
+
+.guide-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--purple-deep);
+  margin-top: 1rem;
+}
+
+.guide-subtitle {
+  font-size: 1.15rem;
+  color: var(--ink-60);
+  margin-top: 1rem;
+}
+
+.guide-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-chat-img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--r-xl);
+  box-shadow: var(--s-lg);
+  transform: rotate(2deg);
+}
+
+.chat-bubble {
+  position: absolute;
+  background: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--r-pill);
+  box-shadow: var(--s-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--purple-deep);
+  border-bottom-left-radius: 4px;
+}
+
+.bubble-1 {
+  top: 10%;
+  left: -20px;
+}
+
+.bubble-2 {
+  bottom: 15%;
+  right: -30px;
+  border-bottom-left-radius: var(--r-pill);
+  border-bottom-right-radius: 4px;
+  background: var(--pink);
+  color: var(--white);
+}
+
+/* Timeline Section */
+.timeline-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.timeline-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+}
+
+.timeline-intro p {
+  color: var(--ink-60);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.timeline-interactive {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  background: var(--purple-ghost);
+  padding: 2.5rem;
+  border-radius: var(--r-lg);
+  box-shadow: var(--s-sm);
+  border: 1px solid rgba(75,26,111,0.05);
+}
+
+.timeline-nav-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.t-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: transparent;
+  border-radius: var(--r-md);
+  color: var(--ink-60);
+  font-weight: 600;
+  transition: var(--ease);
+  text-align: left;
+}
+
+.t-nav-btn:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.t-nav-btn.active {
+  background: var(--white);
+  color: var(--purple-deep);
+  box-shadow: var(--s-sm);
+}
+
+.t-icon {
+  font-size: 1.25rem;
+}
+
+.timeline-display-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--s-sm);
+  animation: fadeUp 0.4s ease;
+}
+
+.t-card-badge {
+  display: inline-block;
+  background: var(--purple-wash);
+  color: var(--purple-deep);
+  padding: 0.35rem 1rem;
+  border-radius: var(--r-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-display-card h3 {
+  font-size: 1.5rem;
+  color: var(--purple-deep);
+  margin-bottom: 1rem;
+}
+
+.timeline-display-card p {
+  color: var(--ink-60);
+  line-height: 1.7;
+}
+
+.timeline-product-tip {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--mint-wash);
+  border-left: 4px solid var(--mint);
+  border-radius: 4px;
+  color: #1a8a7a;
+  font-size: 0.95rem;
+}
+
+/* Myths Section */
+.myths-section {
+  padding: 5rem 0;
+}
+
+.myths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.myth-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  box-shadow: var(--s-sm);
+  overflow: hidden;
+  border: 1px solid rgba(75,26,111,0.05);
+}
+
+.myth-box, .fact-box {
+  padding: 2rem;
+}
+
+.myth-box {
+  background: var(--purple-ghost);
+  border-bottom: 1px dashed rgba(75,26,111,0.1);
+}
+
+.myth-label, .fact-label {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--r-pill);
+  margin-bottom: 1rem;
+}
+
+.myth-label {
+  background: rgba(28,10,46,0.1);
+  color: var(--ink-60);
+}
+
+.fact-label {
+  background: var(--mint-wash);
+  color: #1a8a7a;
+}
+
+.myth-box p {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--ink-60);
+  font-style: italic;
+}
+
+.fact-box p {
+  font-size: 1rem;
+  color: var(--purple-deep);
+  line-height: 1.6;
+}
+
+/* Glossary Section */
+.glossary-section {
+  padding: 5rem 0;
+  background: var(--purple-deep);
+  color: var(--white);
+}
+
+.glossary-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 4rem;
+}
+
+.glossary-header h2 {
+  color: var(--white);
+}
+
+.glossary-header p {
+  color: rgba(255,255,255,0.7);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.glossary-item {
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.glossary-item h4 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--pink-soft);
+  margin-bottom: 0.5rem;
+}
+
+.glossary-item p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* CTA Banner */
+.guide-cta-banner {
+  margin: 6rem auto 0;
+  background: var(--pink-wash);
+  border-radius: var(--r-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.cta-content {
+  max-width: 450px;
+}
+
+.cta-content h2 {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  color: var(--purple-deep);
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  color: var(--ink-60);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-visual {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--s-lg);
+  border: 8px solid var(--white);
+}
+
+.cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .timeline-layout, .glossary-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .guide-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .guide-hero-copy {
+    margin: 0 auto;
+  }
+  .timeline-interactive {
+    grid-template-columns: 1fr;
+  }
+  .timeline-nav-vertical {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+  .t-nav-btn {
+    white-space: nowrap;
+  }
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+  .guide-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+  }
+  .cta-visual {
+    width: 250px;
+    height: 250px;
+  }
+}

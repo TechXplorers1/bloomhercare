@@ -1,0 +1,99 @@
+.price-pack-qty {
+  font-size: 1rem;
+  color: var(--ink-60);
+  font-weight: 500;
+}
+
+.how-grid {
+  display: grid;
+  grid-template-cols: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.how-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--s-sm);
+  border: 1px solid rgba(75, 26, 111, 0.03);
+  text-align: center;
+  position: relative;
+  transition: var(--spring);
+}
+
+.how-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--s-md);
+  border-color: var(--purple-wash);
+}
+
+.how-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--purple-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 15px rgba(62, 212, 188, 0.3);
+}
+
+.how-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--purple-deep);
+  margin-bottom: 0.75rem;
+}
+
+.how-card p {
+  font-size: 0.95rem;
+  color: var(--ink-60);
+  line-height: 1.6;
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-cols: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.perk-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--s-sm);
+  border: 1px solid rgba(75, 26, 111, 0.03);
+  text-align: center;
+  transition: var(--spring);
+}
+
+.perk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--s-md);
+  border-color: var(--purple-wash);
+}
+
+.perk-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.perk-card h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--purple-deep);
+  margin-bottom: 0.5rem;
+}
+
+.perk-card p {
+  font-size: 0.9rem;
+  color: var(--ink-60);
+  line-height: 1.5;
+}

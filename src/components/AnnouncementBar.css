@@ -1,0 +1,26 @@
+/* AnnouncementBar.css */
+.ann-bar {
+  background: var(--purple-deep);
+  padding: 0.55rem 0;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.ann-track-wrap { overflow: hidden; position: relative; }
+.ann-track-wrap::before,
+.ann-track-wrap::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2;
+  pointer-events: none;
+}
+.ann-track-wrap::before { left:0; background: linear-gradient(to right, var(--purple-deep), transparent); }
+.ann-track-wrap::after  { right:0; background: linear-gradient(to left, var(--purple-deep), transparent); }
+.ann-track {
+  display: flex; gap: 3rem;
+  animation: ticker 30s linear infinite;
+  width: max-content;
+}
+.ann-item { display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; flex-shrink: 0; }
+.ann-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--pink); display: block; }
+.ann-text { color: rgba(255,255,255,0.88); font-size: 0.8rem; font-weight: 500; }

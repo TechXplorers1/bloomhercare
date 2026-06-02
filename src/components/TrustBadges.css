@@ -1,0 +1,75 @@
+.trust-section {
+  padding: 4rem 0;
+  background-color: var(--white);
+  border-top: 1px solid rgba(106, 53, 193, 0.1);
+  border-bottom: 1px solid rgba(106, 53, 193, 0.1);
+  overflow: hidden;
+}
+
+.metrics-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.metric-item {
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.metric-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badges-scroller {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.badges-track {
+  display: flex;
+  width: calc(250px * 10);
+  animation: scroll 30s linear infinite;
+}
+
+.badge-item {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.badge-icon {
+  color: var(--pink-accent);
+  background: var(--soft-lavender);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.badge-text {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 5)); }
+}
+
+@media (max-width: 768px) {
+  .metrics-grid { flex-direction: column; }
+}

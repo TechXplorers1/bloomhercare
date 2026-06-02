@@ -1,0 +1,82 @@
+.color-options {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.color-btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--r-pill);
+  border: 1.5px solid rgba(75, 26, 111, 0.15);
+  background: var(--white);
+  color: var(--purple-deep);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--spring);
+}
+
+.color-btn:hover {
+  background: var(--purple-wash);
+  border-color: var(--purple-soft);
+}
+
+.color-btn.selected {
+  background: var(--purple-deep);
+  color: var(--white);
+  border-color: var(--purple-deep);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-cols: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tech-card {
+  background: var(--white);
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--s-sm);
+  border: 1px solid rgba(75, 26, 111, 0.03);
+  text-align: center;
+  position: relative;
+  transition: var(--spring);
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--s-md);
+  border-color: var(--purple-wash);
+}
+
+.tech-step-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: var(--s-pink);
+}
+
+.tech-card h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--purple-deep);
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tech-card p {
+  font-size: 0.9rem;
+  color: var(--ink-60);
+  line-height: 1.5;
+}

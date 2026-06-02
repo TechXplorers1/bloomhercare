@@ -1,0 +1,20 @@
+.cv-section { background: var(--white); }
+.cv-head { margin-bottom:3.5rem; display:flex; flex-direction:column; align-items:center; gap:0.9rem; }
+.cv-h2 { font-size:clamp(2rem,4vw,3rem); color:var(--purple-deep); }
+.cv-h2 em { font-style:italic; color:var(--pink); }
+.cv-sub { font-size:1.05rem; color:var(--ink-60); max-width:480px; }
+.cv-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+.cv-card {
+  background:var(--white); border:1.5px solid rgba(75,26,111,0.07);
+  border-radius:var(--r-lg); padding:2.5rem 1.75rem;
+  text-align:center; box-shadow:var(--s-sm);
+  transition:var(--spring); display:flex; flex-direction:column; align-items:center; gap:1.1rem;
+}
+.cv-card:hover { box-shadow:var(--s-lg); transform:translateY(-8px); border-color:rgba(75,26,111,0.18); }
+.cv-icon-ring { width:80px; height:80px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:var(--spring); }
+.cv-card:hover .cv-icon-ring { transform:scale(1.12) rotate(6deg); }
+.cv-emoji { font-size:2rem; }
+.cv-card-h { font-family:var(--serif); font-size:1.2rem; color:var(--purple-deep); }
+.cv-card-p { font-size:0.88rem; color:var(--ink-60); line-height:1.65; }
+@media (max-width:1024px) { .cv-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:580px)  { .cv-grid { grid-template-columns:1fr; } }
