@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import './HeatPadsPage.css';
 
 const steps = [
@@ -22,8 +23,18 @@ const reviews = [
 export default function HeatPadsPage() {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
+    addToCart({
+      cartKey: 'heat-pads',
+      id: 'heat-pads',
+      name: 'BloomWarm™ Cramp Relief Heat Pads',
+      variant: 'Pack of 5 patches',
+      price: 12.99,
+      img: '/images/kit-open-2.jpg',
+      qty,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

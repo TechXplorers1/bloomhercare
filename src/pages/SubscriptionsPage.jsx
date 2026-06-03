@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CheckoutModal from '../components/CheckoutModal';
 import './SubscriptionsPage.css';
 
 const faqs = [
@@ -11,9 +12,18 @@ const faqs = [
 export default function SubscriptionsPage() {
   const [activePlan, setActivePlan] = useState(1);
   const [openFaq, setOpenFaq] = useState(null);
+  
+  // Checkout Modal state
+  const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const [selectedPlanDetails, setSelectedPlanDetails] = useState({ name: '', price: '' });
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const handleSubscribe = (planName, planPrice) => {
+    setSelectedPlanDetails({ name: planName, price: planPrice });
+    setCheckoutModalOpen(true);
   };
 
   return (
@@ -47,7 +57,12 @@ export default function SubscriptionsPage() {
               <li>✓ Free shipping every month</li>
               <li>✓ Modify, pause, or cancel anytime</li>
             </ul>
-            <button className="btn btn-purple plan-btn">Select Pads Only</button>
+            <button
+              className="btn btn-purple plan-btn"
+              onClick={(e) => { e.stopPropagation(); handleSubscribe('Pads Only', '$9.99 / month'); }}
+            >
+              Subscribe Now
+            </button>
           </div>
 
           {/* Plan 2 */}
@@ -67,7 +82,12 @@ export default function SubscriptionsPage() {
               <li>✓ Exclusive surprise subscriber gifts</li>
               <li>✓ Free shipping & cancel anytime</li>
             </ul>
-            <button className="btn btn-pink plan-btn">Select Pads + Panties</button>
+            <button
+              className="btn btn-pink plan-btn"
+              onClick={(e) => { e.stopPropagation(); handleSubscribe('Pads + Panties', '$16.99 / month'); }}
+            >
+              Subscribe Now
+            </button>
           </div>
 
           {/* Plan 3 */}
@@ -86,7 +106,12 @@ export default function SubscriptionsPage() {
               <li>✓ Premium subscriber gift every quarter</li>
               <li>✓ Free shipping & cancel anytime</li>
             </ul>
-            <button className="btn btn-purple plan-btn">Select Complete Kit</button>
+            <button
+              className="btn btn-purple plan-btn"
+              onClick={(e) => { e.stopPropagation(); handleSubscribe('Complete Care Kit', '$24.99 / month'); }}
+            >
+              Subscribe Now
+            </button>
           </div>
         </div>
       </div>
@@ -178,6 +203,14 @@ export default function SubscriptionsPage() {
           ))}
         </div>
       </div>
+
+      <CheckoutModal
+        isOpen={checkoutModalOpen}
+        onClose={() => setCheckoutModalOpen(false)}
+        mode="subscription"
+        planName={selectedPlanDetails.name}
+        planPrice={selectedPlanDetails.price}
+      />
     </div>
   );
 }

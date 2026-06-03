@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './ShopPage.css';
 
 const products = [
@@ -7,52 +8,80 @@ const products = [
     id: 'starter-kit',
     name: "Go With Your Flow™ Starter Kit",
     category: 'Bundles',
-    price: '$49.99',
+    price: 49.99,
+    priceDisplay: '$49.99',
     tag: '⭐ Best Seller',
     tagStyle: 'tag-pink',
     img: '/images/starter-kit.jpg',
     desc: 'The ultimate first period companion. Includes pads, BloomGuide™, pouch, heat patch & affirmation cards.',
-    link: '/products/starter-kit'
+    link: '/products/starter-kit',
+    cartKey: 'starter-kit-S',
+    cartVariant: null,
   },
   {
     id: 'pads',
     name: 'Go With Your Flow™ Pads',
     category: 'Protection',
-    price: '$9.99',
+    price: 9.99,
+    priceDisplay: '$9.99',
     tag: '🌿 100% Organic Cotton',
     tagStyle: 'tag-purple',
     img: '/images/pads.jpg',
     desc: 'Ultra-soft, toxic-free protection for every day of her cycle. Sized for growing bodies.',
-    link: '/products/pads'
+    link: '/products/pads',
+    cartKey: 'pads-balance',
+    cartVariant: 'Balance Pads',
   },
   {
     id: 'panties',
     name: 'BloomHerCare™ Period Panties',
     category: 'Protection',
-    price: '$16.99',
+    price: 16.99,
+    priceDisplay: '$16.99',
     tag: '⚡ Leak-Proof',
     tagStyle: 'tag-mint',
     img: '/images/panties.jpg',
     desc: 'Super soft, breathable, and holds up to 4 pads of flow. Feels just like regular underwear.',
-    link: '/products/panties'
+    link: '/products/panties',
+    cartKey: 'panties-Lavender-S',
+    cartVariant: 'Lavender / Size S',
   },
   {
     id: 'heat-pads',
     name: 'BloomWarm™ Heat Pads',
     category: 'Comfort',
-    price: '$12.99',
+    price: 12.99,
+    priceDisplay: '$12.99',
     tag: '🔥 Soothing Relief',
     tagStyle: 'tag-gold',
     img: '/images/kit-open-2.jpg',
     desc: 'Air-activated warm patches that stick to clothing to soothe cramps for up to 8 hours.',
-    link: '/products/heat-pads'
+    link: '/products/heat-pads',
+    cartKey: 'heat-pads',
+    cartVariant: 'Pack of 5 patches',
   }
 ];
 
 export default function ShopPage() {
   const [filter, setFilter] = useState('All');
+  const [addedIds, setAddedIds] = useState({});
+  const { addToCart } = useCart();
 
   const filtered = filter === 'All' ? products : products.filter(p => p.category === filter);
+
+  const handleQuickAdd = (p) => {
+    addToCart({
+      cartKey: p.cartKey,
+      id: p.id,
+      name: p.name,
+      variant: p.cartVariant,
+      price: p.price,
+      img: p.img,
+      qty: 1,
+    });
+    setAddedIds(prev => ({ ...prev, [p.id]: true }));
+    setTimeout(() => setAddedIds(prev => ({ ...prev, [p.id]: false })), 2000);
+  };
 
   return (
     <div className="shop-page fade-up">
@@ -102,8 +131,25 @@ export default function ShopPage() {
                 </h3>
                 <p className="shop-product-desc">{p.desc}</p>
                 <div className="shop-card-footer">
-                  <span className="shop-product-price">{p.price}</span>
-                  <Link to={p.link} className="btn btn-purple btn-sm">Buy Now</Link>
+                  <span className="shop-product-price">{p.priceDisplay}</span>
+                  <button
+                    className={`btn btn-sm shop-add-btn ${addedIds[p.id] ? 'added' : 'btn-purple'}`}
+                    onClick={() => handleQuickAdd(p)}
+                    id={`quick-add-${p.id}`}
+                  >
+                    {addedIds[p.id] ? (
+                      <>✓ Added!</>
+                    ) : (
+                      <>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                          <line x1="3" y1="6" x2="21" y2="6"/>
+                          <path d="M16 10a4 4 0 01-8 0"/>
+                        </svg>
+                        Add to Cart
+                      </>
+                    )}
+                  </button>
                 </div>
               </div>
             </div>

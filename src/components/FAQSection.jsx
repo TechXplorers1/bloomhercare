@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { openWhatsApp } from '../utils/whatsapp';
 import './FAQSection.css';
 
 const faqs = [
@@ -12,6 +13,13 @@ const faqs = [
 
 export default function FAQSection() {
   const [open, setOpen] = useState(null);
+
+  const handleContact = () => {
+    openWhatsApp(
+      'Hi BloomHerCare! 🌸 I have a question and would love some help. Could you please assist me?'
+    );
+  };
+
   return (
     <section className="faq-section section">
       <div className="wrap faq-grid">
@@ -19,8 +27,8 @@ export default function FAQSection() {
           <span className="tag tag-purple">FAQs</span>
           <h2 className="faq-h">Got Questions?<br /><em>We've Got Answers.</em></h2>
           <p className="faq-p">Everything you need to know to feel confident about BloomHerCare.</p>
-          <button className="btn btn-purple" style={{ marginTop:'1rem', alignSelf:'flex-start' }}>
-            Contact Us
+          <button className="btn btn-purple" style={{ marginTop:'1rem', alignSelf:'flex-start' }} onClick={handleContact}>
+            Contact Us via WhatsApp 💬
           </button>
         </div>
         <div className="faq-right">

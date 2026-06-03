@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HeroSection.css';
 
 export default function HeroSection() {
@@ -32,13 +33,13 @@ export default function HeroSection() {
           </div>
 
           <div className="hero-ctas">
-            <a href="#starter-kit" className="btn btn-pink hero-cta-main">
+            <Link to="/products/starter-kit" className="btn btn-pink hero-cta-main">
               Shop Starter Kit
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
               </svg>
-            </a>
-            <a href="#resources" className="btn btn-ghost">Learn More</a>
+            </Link>
+            <Link to="/first-period-guide" className="btn btn-ghost">Learn More</Link>
           </div>
 
           {/* Social proof */}

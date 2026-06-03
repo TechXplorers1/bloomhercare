@@ -113,6 +113,10 @@
   .footer-main-grid { grid-template-columns: repeat(2,1fr); }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
+@media (max-width: 600px) {
+  .fcta-btns { flex-direction: column; width: 100%; gap: 0.8rem; }
+  .fcta-btns .btn { width: 100%; }
+}
 @media (max-width: 480px) {
   .footer-main-grid { grid-template-columns: 1fr; }
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import './StarterKitPage.css';
+
 
 const includes = [
   { icon: '🌸', name: '5 Lite Pads', desc: 'For lighter flow or transition days.' },
@@ -22,8 +24,18 @@ export default function StarterKitPage() {
   const [size, setSize] = useState('S');
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
+    addToCart({
+      cartKey: `starter-kit-${size}`,
+      id: 'starter-kit',
+      name: 'Go With Your Flow™ Starter Kit',
+      price: 49.99,
+      img: '/images/starter-kit.jpg',
+      size,
+      qty,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

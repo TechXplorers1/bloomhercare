@@ -163,6 +163,20 @@
   font-size: 0.85rem;
 }
 
+/* Quick Add Button */
+.shop-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--spring) !important;
+}
+.shop-add-btn.added {
+  background: #1a8a7a !important;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+
+
 .shop-benefits-banner {
   background: var(--purple-wash);
   padding: 4rem 0;

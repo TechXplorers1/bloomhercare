@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './StarterKitFeature.css';
 
 const includes = [
@@ -20,6 +22,20 @@ const sideBadges = [
 ];
 
 export default function StarterKitFeature() {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      cartKey: 'starter-kit-S',
+      id: 'starter-kit',
+      name: 'Go With Your Flow™ Starter Kit',
+      price: 49.99,
+      img: '/images/starter-kit.jpg',
+      size: 'S',
+      qty: 1,
+    });
+  };
+
   return (
     <section className="skf section" id="starter-kit">
       {/* Full-width editorial banner first */}
@@ -34,10 +50,15 @@ export default function StarterKitFeature() {
             <p className="skf-banner-sub">
               The Go With Your Flow™ Starter Kit is the ultimate first period companion — everything in one beautiful, ready-to-gift box.
             </p>
-            <button className="btn btn-pink skf-cta">
-              Shop Starter Kit — $49.99
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
+            <div className="skf-cta-row">
+              <Link to="/products/starter-kit" className="btn btn-pink skf-cta">
+                View Starter Kit — $49.99
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </Link>
+              <button className="btn btn-ghost skf-cart-btn" onClick={handleAddToCart}>
+                🛒 Add to Cart
+              </button>
+            </div>
           </div>
           <div className="skf-banner-imgs">
             <div className="skf-img-main float">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import './PantiesPage.css';
 
 const techLayers = [
@@ -18,8 +19,19 @@ export default function PantiesPage() {
   const [color, setColor] = useState('Lavender');
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const handleAddToCart = () => {
+    addToCart({
+      cartKey: `panties-${color}-${size}`,
+      id: 'panties',
+      name: 'BloomHerCare™ Period Panties',
+      color,
+      size,
+      price: 16.99,
+      img: '/images/panties.jpg',
+      qty,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

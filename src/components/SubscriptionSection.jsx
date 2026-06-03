@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import CheckoutModal from './CheckoutModal';
 import './SubscriptionSection.css';
 
 const plans = [
@@ -9,6 +11,16 @@ const plans = [
 
 export default function SubscriptionSection() {
   const [sel, setSel] = useState(1);
+  const navigate = useNavigate();
+
+  const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
+  const [selectedPlanDetails, setSelectedPlanDetails] = useState({ name: '', price: '' });
+
+  const handleChoosePlan = (e, plan) => {
+    e.stopPropagation();
+    setSelectedPlanDetails({ name: plan.name, price: `${plan.price} / month` });
+    setCheckoutModalOpen(true);
+  };
   return (
     <section className="sub-sec section" id="subscriptions">
       <div className="sub-bg-blob sub-blob-1" />
@@ -36,8 +48,11 @@ export default function SubscriptionSection() {
                   <li key={fi}><span className="feat-check">✓</span>{f}</li>
                 ))}
               </ul>
-              <button className={`btn ${p.popular ? 'btn-pink' : 'sub-btn-ghost'} plan-btn`}>
-                Choose Plan
+              <button
+                className={`btn ${p.popular ? 'btn-pink' : 'sub-btn-ghost'} plan-btn`}
+                onClick={(e) => handleChoosePlan(e, p)}
+              >
+                Subscribe Now
               </button>
             </div>
           ))}
@@ -50,6 +65,14 @@ export default function SubscriptionSection() {
           ))}
         </div>
       </div>
+
+      <CheckoutModal
+        isOpen={checkoutModalOpen}
+        onClose={() => setCheckoutModalOpen(false)}
+        mode="subscription"
+        planName={selectedPlanDetails.name}
+        planPrice={selectedPlanDetails.price}
+      />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './Navbar.css';
 
 const shopItems = [
@@ -16,6 +17,7 @@ export default function Navbar() {
   const [shopOpen,  setShopOpen]  = useState(false);
   const dropRef = useRef(null);
   const { pathname } = useLocation();
+  const { cartCount, setDrawerOpen } = useCart();
 
   useEffect(() => {
     setMenuOpen(false);
@@ -85,6 +87,26 @@ export default function Navbar() {
         {/* ── ACTIONS ── */}
         <div className="nav-actions">
           <Link to="/products/starter-kit" className="btn btn-pink nav-shop-btn">Shop Now</Link>
+
+          {/* Cart Icon */}
+          <button
+            id="navbar-cart-btn"
+            className="nav-cart-btn"
+            onClick={() => setDrawerOpen(true)}
+            aria-label={`Open cart, ${cartCount} item${cartCount !== 1 ? 's' : ''}`}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+            {cartCount > 0 && (
+              <span className="nav-cart-badge" key={cartCount}>
+                {cartCount > 99 ? '99+' : cartCount}
+              </span>
+            )}
+          </button>
+
           <button
             className={`hamburger ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen(!menuOpen)}

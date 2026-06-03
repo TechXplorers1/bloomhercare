@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCart } from '../context/CartContext';
 import './PadsPage.css';
 
 const variants = [
@@ -50,10 +51,20 @@ export default function PadsPage() {
   const [activeVariant, setActiveVariant] = useState('balance');
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const { addToCart } = useCart();
 
   const selected = variants.find(v => v.id === activeVariant);
 
   const handleAddToCart = () => {
+    addToCart({
+      cartKey: `pads-${activeVariant}`,
+      id: `pads-${activeVariant}`,
+      name: `Go With Your Flow™ Pads`,
+      variant: selected.name,
+      price: 9.99,
+      img: '/images/pads.jpg',
+      qty,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

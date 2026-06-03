@@ -183,4 +183,6 @@
 @media (max-width: 600px) {
   .hero-img { height: 280px; }
   .hero-scroll { display: none; }
+  .hero-ctas { flex-direction: column; width: 100%; gap: 0.8rem; }
+  .hero-ctas .btn { width: 100%; }
 }

@@ -6,6 +6,7 @@ import AnnouncementBar from './components/AnnouncementBar';
 import Navbar          from './components/Navbar';
 import SiteFooter      from './components/SiteFooter';
 import ScrollToTop     from './components/ScrollToTop';
+import CartDrawer      from './components/CartDrawer';
 
 import HomePage             from './pages/HomePage';
 import ShopPage             from './pages/ShopPage';
@@ -17,6 +18,7 @@ import SubscriptionsPage    from './pages/SubscriptionsPage';
 import FirstPeriodGuidePage from './pages/FirstPeriodGuidePage';
 import ForParentsPage       from './pages/ForParentsPage';
 import AboutPage            from './pages/AboutPage';
+import CartPage             from './pages/CartPage';
 
 export default function App() {
   return (
@@ -24,6 +26,7 @@ export default function App() {
       <ScrollToTop />
       <AnnouncementBar />
       <Navbar />
+      <CartDrawer />
       <main>
         <Routes>
           <Route path="/"                    element={<HomePage />} />
@@ -36,6 +39,7 @@ export default function App() {
           <Route path="/first-period-guide"  element={<FirstPeriodGuidePage />} />
           <Route path="/for-parents"         element={<ForParentsPage />} />
           <Route path="/about"               element={<AboutPage />} />
+          <Route path="/cart"                element={<CartPage />} />
         </Routes>
       </main>
       <SiteFooter />
